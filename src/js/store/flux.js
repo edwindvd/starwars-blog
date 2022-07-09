@@ -1,6 +1,8 @@
+const BASEURL = process.env.BASEURL || "";
 const getState = ({ getStore, getActions, setStore }) => {
 	return {
 		store: {
+			characters:[],
 			demo: [
 				{
 					title: "FIRST",
@@ -23,6 +25,10 @@ const getState = ({ getStore, getActions, setStore }) => {
 				/**
 					fetch().then().then(data => setStore({ "foo": data.bar }))
 				*/
+			},
+			getCharacters: ()=>{
+				fetch(BASEURL + 'people/').then(response => response.json()).then(data => setStore({characters: data.results})).catch(err => console.log(err))
+					// console.log(typeof BASEURL)
 			},
 			changeColor: (index, color) => {
 				//get the store
