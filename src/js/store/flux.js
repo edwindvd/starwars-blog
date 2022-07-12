@@ -1,7 +1,8 @@
-const BASEURL = process.env.BASEURL || "";
+const BASEURL = "https://swapi.tech/api/";
 const getState = ({ getStore, getActions, setStore }) => {
 	return {
 		store: {
+			character: null,
 			characters:[],
 			demo: [
 				{
@@ -25,6 +26,10 @@ const getState = ({ getStore, getActions, setStore }) => {
 				/**
 					fetch().then().then(data => setStore({ "foo": data.bar }))
 				*/
+			},
+			getCharacterByUid: (id)=>{
+				fetch(BASEURL + 'people/'+id).then(response => response.json()).then(data => setStore({character: data.result})).catch(err => console.log(err))
+					// console.log(typeof BASEURL)
 			},
 			getCharacters: ()=>{
 				fetch(BASEURL + 'people/').then(response => response.json()).then(data => setStore({characters: data.results})).catch(err => console.log(err))
