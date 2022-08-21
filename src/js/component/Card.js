@@ -1,23 +1,23 @@
 import React from "react";
 import Proptypes from "prop-types"
 import { Link } from "react-router-dom";
+import "../../styles/card.css";
 
 const Card = (props) => {
   return (
-    <div>
-      <div className="card">
-        <img src={props.item.url} className="card-img-top" alt="..." />
+    <div className="card">
+      <img src="https://via.placeholder.com/250x150" />
         <div className="card-body">
           <h5 className="card-title">{props.item.name}</h5>
-          <p className="card-text">
-            Some quick example text to build on the card title and make up the
-            bulk of the card's content.
-          </p>
-          <Link to={`/character/${props.item.uid}`} className="btn btn-primary">
-            Go somewhere
-          </Link>
+          <h6 className="card-text"><b>Gender:</b> {props.item.gender}</h6>
+						<h6 className="card-text"><b>Hair Color:</b> {props.item.hair_color}</h6>
+						<h6 className="card-text"><b>Eye Color:</b> {props.item.eye_color}</h6>
+						<div className="d-flex justify-content-between">
+							<Link className="btn btn-outline-primary">
+								Learn more!
+							</Link>
+            </div>
         </div>
-      </div>
     </div>
   );
 };

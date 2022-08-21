@@ -1,21 +1,23 @@
-const BASEURL = "https://swapi.tech/api/";
+const BASEURL = "https://www.swapi.tech/api/";
 const getState = ({ getStore, getActions, setStore }) => {
 	return {
 		store: {
-			character: null,
+			// character: null,
 			characters:[],
-			demo: [
-				{
-					title: "FIRST",
-					background: "white",
-					initial: "white"
-				},
-				{
-					title: "SECOND",
-					background: "white",
-					initial: "white"
-				}
-			]
+			planets:[],
+			vehicles:[],
+			// demo: [
+			// 	{
+			// 		title: "FIRST",
+			// 		background: "white",
+			// 		initial: "white"
+			// 	},
+			// 	{
+			// 		title: "SECOND",
+			// 		background: "white",
+			// 		initial: "white"
+			// 	}
+			// ]
 		},
 		actions: {
 			// Use getActions to call a function within a fuction
@@ -28,11 +30,17 @@ const getState = ({ getStore, getActions, setStore }) => {
 				*/
 			},
 			getCharacterByUid: (id)=>{
-				fetch(BASEURL + 'people/'+id).then(response => response.json()).then(data => setStore({character: data.result})).catch(err => console.log(err))
+				fetch(BASEURL + 'people/'+id)
+				.then(response => response.json())
+				.then(data => setStore({character: data.result}))
+				.catch(err => console.log(err))
 					// console.log(typeof BASEURL)
 			},
 			getCharacters: ()=>{
-				fetch(BASEURL + 'people/').then(response => response.json()).then(data => setStore({characters: data.results})).catch(err => console.log(err))
+				fetch(BASEURL + 'people/')
+				.then(response => response.json())
+				.then(data => setStore({characters: data.results}))
+				.catch(err => console.log(err))
 					// console.log(typeof BASEURL)
 			},
 			changeColor: (index, color) => {
