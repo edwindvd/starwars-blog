@@ -2,22 +2,11 @@ const BASEURL = "https://www.swapi.tech/api/";
 const getState = ({ getStore, getActions, setStore }) => {
 	return {
 		store: {
-			// character: null,
+			character: null,
 			characters:[],
+			planet: null,
 			planets:[],
-			vehicles:[],
-			// demo: [
-			// 	{
-			// 		title: "FIRST",
-			// 		background: "white",
-			// 		initial: "white"
-			// 	},
-			// 	{
-			// 		title: "SECOND",
-			// 		background: "white",
-			// 		initial: "white"
-			// 	}
-			// ]
+			// vehicles:[]
 		},
 		actions: {
 			// Use getActions to call a function within a fuction
@@ -36,10 +25,17 @@ const getState = ({ getStore, getActions, setStore }) => {
 				.catch(err => console.log(err))
 					// console.log(typeof BASEURL)
 			},
-			getCharacters: ()=>{
-				fetch(BASEURL + 'people/')
+			getPlanetByUid: (id)=>{
+				fetch(BASEURL + 'planets/'+id)
 				.then(response => response.json())
-				.then(data => setStore({characters: data.results}))
+				.then(data => setStore({planet: data.results}))
+				.catch(err => console.log(err))
+					// console.log(typeof BASEURL)
+			},
+			getPlanets: ()=>{
+				fetch(BASEURL + 'planets/')
+				.then(response => response.json())
+				.then(data => setStore({planets: data.results}))
 				.catch(err => console.log(err))
 					// console.log(typeof BASEURL)
 			},

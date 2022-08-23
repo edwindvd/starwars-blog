@@ -8,8 +8,14 @@ import Card from "../component/Card.js"
 export const Home = () => {
 	const {store, actions} = useContext(Context)
 	useEffect(()=>{
+		actions.getPlanets()
 		actions.getCharacters()
 	},[])
+
+	// const {store, actions} = useContext(Context)
+	// useEffect(()=>{
+	// 	actions.getPlanets()
+	// },[])
 	
 	//tenemos las tarjetas de personajes, vehiculos y planetas
 
