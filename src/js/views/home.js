@@ -10,13 +10,9 @@ export const Home = () => {
 	useEffect(()=>{
 		actions.getPlanets()
 		actions.getCharacters()
+		actions.getVehicles()
 	},[])
 
-	// const {store, actions} = useContext(Context)
-	// useEffect(()=>{
-	// 	actions.getPlanets()
-	// },[])
-	
 	//tenemos las tarjetas de personajes, vehiculos y planetas
 
 	return(

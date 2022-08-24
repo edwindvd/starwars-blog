@@ -6,7 +6,8 @@ const getState = ({ getStore, getActions, setStore }) => {
 			characters:[],
 			planet: null,
 			planets:[],
-			// vehicles:[]
+			vehicle: null,
+			vehicles:[],
 		},
 		actions: {
 			// Use getActions to call a function within a fuction
@@ -15,20 +16,20 @@ const getState = ({ getStore, getActions, setStore }) => {
 			},
 			loadSomeData: () => {
 				/**
-					fetch().then().then(data => setStore({ "foo": data.bar }))
-				*/
+				 fetch().then().then(data => setStore({ "foo": data.bar }))
+				 */
+			},
+			getCharacters: ()=>{
+				fetch(BASEURL + 'people/')
+				.then(response => response.json())
+				.then(data => setStore({characters: data.results}))
+				.catch(err => console.log(err))
+					// console.log(typeof BASEURL)
 			},
 			getCharacterByUid: (id)=>{
 				fetch(BASEURL + 'people/'+id)
 				.then(response => response.json())
 				.then(data => setStore({character: data.result}))
-				.catch(err => console.log(err))
-					// console.log(typeof BASEURL)
-			},
-			getPlanetByUid: (id)=>{
-				fetch(BASEURL + 'planets/'+id)
-				.then(response => response.json())
-				.then(data => setStore({planet: data.results}))
 				.catch(err => console.log(err))
 					// console.log(typeof BASEURL)
 			},
@@ -39,20 +40,42 @@ const getState = ({ getStore, getActions, setStore }) => {
 				.catch(err => console.log(err))
 					// console.log(typeof BASEURL)
 			},
-			changeColor: (index, color) => {
-				//get the store
-				const store = getStore();
+			getPlanetByUid: (id)=>{
+				fetch(BASEURL + 'planets/'+id)
+				.then(response => response.json())
+				.then(data => setStore({planet: data.result}))
+				.catch(err => console.log(err))
+					// console.log(typeof BASEURL)
+			},
+			getVehicles: ()=>{
+				fetch(BASEURL + 'vehicles/')
+				.then(response => response.json())
+				.then(data => setStore({vehicles: data.results}))
+				.catch(err => console.log(err))
+					// console.log(typeof BASEURL)
+			},
+			getVehicleByUid: (id)=>{
+				fetch(BASEURL + 'vehicles/'+id)
+				.then(response => response.json())
+				.then(data => setStore({vehicle: data.result}))
+				.catch(err => console.log(err))
+					// console.log(typeof BASEURL)
+			},
 
-				//we have to loop the entire demo array to look for the respective index
-				//and change its color
-				const demo = store.demo.map((elm, i) => {
-					if (i === index) elm.background = color;
-					return elm;
-				});
+			// changeColor: (index, color) => {
+			// 	//get the store
+			// 	const store = getStore();
 
-				//reset the global store
-				setStore({ demo: demo });
-			}
+			// 	//we have to loop the entire demo array to look for the respective index
+			// 	//and change its color
+			// 	const demo = store.demo.map((elm, i) => {
+			// 		if (i === index) elm.background = color;
+			// 		return elm;
+			// 	});
+
+			// 	//reset the global store
+			// 	setStore({ demo: demo });
+			// }
 		}
 	};
 };

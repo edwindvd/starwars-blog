@@ -13,9 +13,9 @@ const Card = (props) => {
 						<h6 className="card-text"><b>Hair Color:</b> {props.item.hair_color}</h6>
 						<h6 className="card-text"><b>Eye Color:</b> {props.item.eye_color}</h6>
 						<div className="d-flex justify-content-between">
-							<Link className="btn btn-outline-primary">
+							{/* <Link className="btn btn-outline-primary">
 								Learn more!
-							</Link>
+							</Link> */}
             </div>
         </div>
     </div>
