@@ -8,7 +8,7 @@ export const Vehicles = () => {
 	const params = useParams();
 
     useEffect(()=>{
-        actions.getPlanetByUid(params.uid)
+        actions.getVehicleByUid(params.uid)
 
     },[])
 
@@ -21,29 +21,29 @@ export const Vehicles = () => {
 				</div>
 			</div>
 		<div className="text text-center col-8 p-4">
-				<h2 className="title">{store.planet && store.planet.properties.name}</h2>
+				<h2 className="title">{store.vehicle && store.vehicle.properties.name}</h2>
 				<p className="description fs-4">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolorum deserunt debitis harum doloribus? Laboriosam incidunt placeat ipsum tempore recusandae? Officia maxime enim iusto alias a nesciunt quisquam dolores veniam illo!</p>
 			</div>
 	 	</div>
 		<div className="container2 wd-flex border-top border-danger border-2">
 			<div className="details d-flex pt-4">
 				<h5 className="px-5 text-danger">Name:
-	 				<p className="pt-2 text-danger">{store.planet && store.planet.properties.name}</p>
+	 				<p className="pt-2 text-danger">{store.vehicle && store.vehicle.properties.name}</p>
 	 			</h5>
-				<h5 className="px-5 text-danger">Birth Year:
-					<p className="pt-2 text-danger">{store.planet && store.planet.properties.climate}</p>
+				<h5 className="px-5 text-danger">Model:
+					<p className="pt-2 text-danger">{store.vehicle && store.vehicle.properties.model}</p>
 				</h5>
-			<h5 className="px-5 text-danger">Gender:
-	 				<p className="pt-2 text-danger">{store.planet && store.planet.properties.population}</p>
+			<h5 className="px-5 text-danger">Manufacturer:
+	 				<p className="pt-2 text-danger">{store.vehicle && store.vehicle.properties.manufacturer}</p>
 				</h5>
-				<h5 className="px-5 text-danger">Height:
-					<p className="pt-2 text-danger">{store.planet && store.planet.properties.orbital_period}</p>
+				<h5 className="px-5 text-danger">Class:
+					<p className="pt-2 text-danger">{store.vehicle && store.vehicle.properties.vehicle_class}</p>
 	 			</h5>
-	 			<h5 className="px-5 text-danger">Skin Color:
-					<p className="pt-2 text-danger">{store.planet && store.planet.rotation_period}</p>
+	 			<h5 className="px-5 text-danger">Crew:
+					<p className="pt-2 text-danger">{store.vehicle && store.vehicle.crew}</p>
 	 			</h5>
-				<h5 className="px-5 text-danger">Eye Color:
-					<p className="pt-2 text-danger">{store.character && store.character.properties.diameter}</p>
+				<h5 className="px-5 text-danger">Consumables:
+					<p className="pt-2 text-danger">{store.character && store.character.properties.consumables}</p>
 	 			</h5>
 	 		</div>
 		</div>

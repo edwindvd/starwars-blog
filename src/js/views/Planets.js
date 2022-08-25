@@ -30,19 +30,19 @@ export const Planets = () => {
 				<h5 className="px-5 text-danger">Name:
 	 				<p className="pt-2 text-danger">{store.planet && store.planet.properties.name}</p>
 	 			</h5>
-				<h5 className="px-5 text-danger">Birth Year:
+				<h5 className="px-5 text-danger">Climate:
 					<p className="pt-2 text-danger">{store.planet && store.planet.properties.climate}</p>
 				</h5>
-			<h5 className="px-5 text-danger">Gender:
+			<h5 className="px-5 text-danger">Population:
 	 				<p className="pt-2 text-danger">{store.planet && store.planet.properties.population}</p>
 				</h5>
-				<h5 className="px-5 text-danger">Height:
+				<h5 className="px-5 text-danger">Orbital Period:
 					<p className="pt-2 text-danger">{store.planet && store.planet.properties.orbital_period}</p>
 	 			</h5>
-	 			<h5 className="px-5 text-danger">Skin Color:
+	 			<h5 className="px-5 text-danger">Rotation Period:
 					<p className="pt-2 text-danger">{store.planet && store.planet.rotation_period}</p>
 	 			</h5>
-				<h5 className="px-5 text-danger">Eye Color:
+				<h5 className="px-5 text-danger">Diameter:
 					<p className="pt-2 text-danger">{store.character && store.character.properties.diameter}</p>
 	 			</h5>
 	 		</div>
