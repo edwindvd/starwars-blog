@@ -2,6 +2,7 @@ import React, { useState, useEffect, useContext } from "react";
 import { Link, useParams } from "react-router-dom";
 import { Context } from "../store/appContext";
 
+
 export const Character = () => {
 	const { store, actions } = useContext(Context);
 	const params = useParams();
@@ -12,7 +13,7 @@ export const Character = () => {
     },[])
 
 	return (  
-	       <div className="main">
+	       <div className="main px-5 mx-5">
 		<div className="container1 row">
 			<div className="image col-4 mb-3">
 				<div className="container">
@@ -46,11 +47,6 @@ export const Character = () => {
 	 			</h5>
 	 		</div>
 		</div>
-
-{/* 
-            <h1> {store.character && store.character.properties.name} </h1>
-            <h1>{params.uid}</h1> */}
-
 		</div>
 	);
 };
