@@ -8,6 +8,8 @@ const getState = ({ getStore, getActions, setStore }) => {
 			planets:[],
 			vehicle: null,
 			vehicles:[],
+			// endPoints: ["character","planets","vehicles"],
+			favorites: JSON.parse(localStorage.getItem("favorites")) || []
 		},
 		actions: {
 			// Use getActions to call a function within a fuction
@@ -61,6 +63,34 @@ const getState = ({ getStore, getActions, setStore }) => {
 				.then(data => setStore({vehicle: data.result}))
 				.catch(err => console.log(err))
 					// console.log(typeof BASEURL)
+			},
+
+			addFavorites: (id) =>{
+				const store = getStore()
+				let exists = store.favorites.find((item)=>{
+					return item == id	
+				})
+				if(!exists){
+					setStore({
+						...store,
+						favorites:[...store.favorites,id]
+					})
+					localStorage.setItem("favorites" ,JSON.stringify(store.favorites))
+				}
+				
+			},
+
+			deleteFavs: (id) =>{
+				const store = getStore()
+				let newFavorite = store.favorites.filter((item,index)=>{
+					return id != index
+				})
+				store.favorites = newFavorite
+				setStore({
+					...store,
+					favorites: store.favorites
+				})
+				localStorage.setItem("favorites", JSON.stringify(store.favorites))
 			},
 		}
 	};

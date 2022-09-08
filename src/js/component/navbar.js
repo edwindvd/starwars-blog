@@ -4,12 +4,12 @@ import { Link } from "react-router-dom";
 export const Navbar = () => {
 	return (
 		<nav className="navbar navbar-light bg-light mb-3">
-			<Link to="/">
+			<Link className="mx-5 px-5 my-3" to="/">
 			<img src="https://www.picng.com/upload/star_wars_logo/png_star_wars_logo_65410.png" alt="" width="20%" heigh="auto" />
 			</Link>
 			<div className="ml-auto">
 				<div className="dropdown">
-					<button className="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+					<button className="btn btn-primary dropdown-toggle mx-5 px-5" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
 						Favorites 
 						{/* {store.favorites.length} */}
 					</button>
