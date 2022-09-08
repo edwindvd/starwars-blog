@@ -9,7 +9,7 @@ import { useState } from "react";
 import { useContext } from "react";
 import { Context } from "../store/appContext";
 
-const Card = ( props ) => {
+const Card = ( props, {item} ) => {
   const [favorite, setFavorite] = useState(false)
   const { store, actions } = useContext(Context)
  
@@ -35,7 +35,7 @@ const Card = ( props ) => {
 								Learn more!
 							</Link>
 							<button type="button" className="btn btn-outline-warning" onClick={() => {
-								actions.addFavorites(item.properties.name)
+								actions.addFavorites(item)
 								setFavorite(true)
 							}}> esto
                 {/* <FontAwesomeIcon icon={faHeart} /> */}
