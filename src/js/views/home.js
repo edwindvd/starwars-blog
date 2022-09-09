@@ -21,7 +21,7 @@ export const Home = () => {
 		<h1> Character </h1>
 		<div className="row">
 		{store.characters.map((alliens) => {
-			return <Card key={alliens.uid} item={alliens}/>
+			return <Card key={alliens.uid} item={alliens} endpoint="character"/>
 		})}
 		</div>
 	</div>
@@ -29,7 +29,7 @@ export const Home = () => {
 		<h1> Planets </h1>
 		<div className="row">
 		{store.planets.map((planetas) => {
-			return <Card key={planetas.uid} item={planetas}/>
+			return <Card key={planetas.uid} item={planetas} endpoint="planets"/>
 		})}
 		</div>
 	</div>
@@ -37,7 +37,7 @@ export const Home = () => {
 		<h1> Vehicle </h1>
 		<div className="row">
 		{store.vehicles.map((naves) => {
-			return <Card key={naves.uid} item={naves}/>
+			return <Card key={naves.uid} item={naves} endpoint="vehicles"/>
 		})}
 		</div>
 	</div>

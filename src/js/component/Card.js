@@ -9,7 +9,7 @@ import { useState } from "react";
 import { useContext } from "react";
 import { Context } from "../store/appContext";
 
-const Card = ( props, {item} ) => {
+const Card = ( props) => {
   const [favorite, setFavorite] = useState(false)
   const { store, actions } = useContext(Context)
  
@@ -31,14 +31,14 @@ const Card = ( props, {item} ) => {
             </h6> */}
              <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
 							<div className="d-flex justify-content-between">
-							<Link to={`/character/${props.item.uid}`} className="btn btn-outline-primary">
+							<Link to={`/${props.endpoint}/${props.item.uid}`} className="btn btn-outline-primary">
 								Learn more!
 							</Link>
 							<button type="button" className="btn btn-outline-warning" onClick={() => {
-								actions.addFavorites(item)
+								actions.addFavorites(props.item.name)
 								setFavorite(true)
-							}}> esto
-                {/* <FontAwesomeIcon icon={faHeart} /> */}
+							}}>
+              <i className="fas fa-heart"></i>
               </button>
 						</div>
         </div>

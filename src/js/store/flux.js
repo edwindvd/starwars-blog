@@ -8,7 +8,6 @@ const getState = ({ getStore, getActions, setStore }) => {
 			planets:[],
 			vehicle: null,
 			vehicles:[],
-			// endPoints: ["character","planets","vehicles"],
 			favorites: JSON.parse(localStorage.getItem("favorites")) || []
 		},
 		actions: {
